@@ -19,11 +19,12 @@ function App() {
   const acak = e => {
     e.preventDefault();
     const grp = []
-    const data = names.split('\n').filter(item => item !== '')
+    let data = names.split('\n').filter(item => item !== '')
     setArrNames(names.split('\n').filter(item => item !== ''))
 
     let activeGrp = 0
     while (data.length > 0) {
+      data = data.sort((a, b) => 0.5 - Math.random())
       const d = data.shift()
       grp[activeGrp] = grp[activeGrp] ?? []
       grp[activeGrp].push(d)
@@ -75,7 +76,7 @@ function App() {
       <hr />
       <Row>
         {groups.length > 0 ? groups.map((item, index) => (
-          <Col key={index}>
+          <Col key={index} sm='6' md='4' className='mb-4'>
             <ListGroup>
               <ListGroup.Item className='fw-bold'>Kelompok { index + 1 }</ListGroup.Item>
               {item.map((name, i) => (
