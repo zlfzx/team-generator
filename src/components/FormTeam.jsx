@@ -44,12 +44,12 @@ export default function FormTeam() {
         <Col sm='12' md='6' className='p-5'>
             <Form onSubmit={acak}>
                 <Form.Group className='mb-3'>
-                    <Form.Label><h5>Jumlah Tim</h5></Form.Label>
+                    <Form.Label>Jumlah Tim</Form.Label>
                     <Form.Control type="number" value={state.number} onChange={changeNumber} placeholder="Masukkan jumlah Tim" min='1' />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label><h5>Nama Anggota</h5></Form.Label>
+                    <Form.Label>Nama Anggota</Form.Label>
                     <Form.Control as="textarea" value={state.names} onChange={changeNames} placeholder="Masukkan nama anggota" style={{ height: '200px' }} />
                     <Form.Text className="text-muted">
                         Pisahkan nama dengan enter (baris baru)
