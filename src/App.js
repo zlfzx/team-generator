@@ -43,15 +43,18 @@ function App() {
   return (
     <Container>
       <Row className='my-5'>
+        <Col sm='12'>
+          <h1 className='text-center'>Random Team Generator</h1>
+        </Col>
         <Col sm='12' md='6' className='p-5'>
           <Form onSubmit={acak}>
             <Form.Group className='mb-3'>
-              <Form.Label>Jumlah Kelompok</Form.Label>
-              <Form.Control type="number" value={number} onChange={changeNumber} placeholder="Masukkan jumlah kelompok" min='1' />
+              <Form.Label><h5>Jumlah Tim</h5></Form.Label>
+              <Form.Control type="number" value={number} onChange={changeNumber} placeholder="Masukkan jumlah Tim" min='1' />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Nama Anggota</Form.Label>
+              <Form.Label><h5>Nama Anggota</h5></Form.Label>
               <Form.Control as="textarea" value={names} onChange={changeNames} placeholder="Masukkan nama anggota" style={{ height: '200px' }} />
               <Form.Text className="text-muted">
                 Pisahkan nama dengan enter (baris baru)
@@ -78,7 +81,7 @@ function App() {
         {groups.length > 0 ? groups.map((item, index) => (
           <Col key={index} sm='6' md='4' className='mb-4'>
             <ListGroup>
-              <ListGroup.Item className='fw-bold'>Kelompok { index + 1 }</ListGroup.Item>
+              <ListGroup.Item className='fw-bold'>Tim { index + 1 }</ListGroup.Item>
               {item.map((name, i) => (
                 <ListGroup.Item key={i}>{ i + 1 }. { name }</ListGroup.Item>
               ))}
