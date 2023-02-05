@@ -36,8 +36,6 @@ export default function FormTeam() {
             }
         }
         dispatch({type: 'SET_GROUPS', payload: grp})
-
-        console.log(grp)
     }
 
     return (
